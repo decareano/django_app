@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- <h1>Description of the field is:</h1>{{ hospitalIncrease }} -->
+
+<h1>{% block title %}Description of the field is: {{ object.hospital_increase }}</h1>{% endblock %}
+<!-- <p>{% if obj.description != None and obj.description != '' %}{{ obj.hospital_increase }}{% else %}Description coming soon{% endif %}</p> -->
+<p>{% if object.hospital_currently != None and object.hospital_currently != '' %}{{ object.hospital_currently}}{% else %}Hospital_currently coming soon{% endif %}</p>
+<h1>Item</h1>
+<h3>Dead totals for the day: </h3> {{ object.dead_daily }}
+This will be escaped: {{ object.hospital_increase }}
+
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>about</h1>
+<p>This is a template</p>
+
+<h3>{{ title | capfirst }}</h3>
+
+
+{{ my_html|safe }}
+
+<p>
+  {{ my_number }}, '------' , {{ my_list }}, {{ title }}, '++++', {{ this_is_true }}
+</p>
+
+
+<ul>
+	<li>Item1</li>
+	<li>Item2</li>
+</ul>
+
+<ul>
+{% for abc in my_list %}
+	{% if abc == 12 %}
+		<li>{{ forloop.counter }} - {{ abc|add:22 }}</li>
+	{% elif abc == "abc" %}
+		<li>this is not a network</li>
+	{% else %}
+		<li>{{ forloop.counter }} - {{ abc }}</li>
+	{% endif %}
+{% endfor %}
+</ul>
+
+
+<ul>
+{% for a in athlete_list %}
+	{% if a == 'laura' %}
+    	<li>laura is a jumper - {{ athlete_list|length }}</li>
+	{% elif a == 'jennifer' %}
+    	<li>Athletes should be out of the locker room soon!</li>
+	{% else %}
+    	<p>No athletes.</p>
+	{% endif %}
+{% endfor %}
+</ul>
+
+{% endblock %}
