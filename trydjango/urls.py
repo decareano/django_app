@@ -22,9 +22,9 @@ from covidapp.views import hospital_create_view, hospital_detail_view, hospital_
 urlpatterns = [
     path('createCovid', hospital_create_view),
     #path('covidapp/', include('covidapp.urls')),
-    path('oneCovid/', hospital_detail_view, name='product-delete'),
+    #path('oneCovid/', hospital_detail_view, name='product-delete'),
     path('oneCovid/<int:id>/', hospital_detail_view, name='product-detail'),
-    path('covidapp/', hospital_list_view, name='product-list'),
+    path('covidapp/', hospital_list_view, name='hospital-list'),
     path('blog/', include('blog.urls')),
     path('products/', include('products.urls')),
     path('', home_view, name='home'),

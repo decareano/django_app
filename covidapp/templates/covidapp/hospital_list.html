@@ -6,6 +6,7 @@
 
 {% for instance in object_list %}
 	<p>{{ instance.id }} - <a href='{{ instance.get_absolute_url }}'>{{ instance.dead_daily }}</p>
+	<!-- <p>{{ instance.tested_today }} - <a href='{{ instance.get_absolute_url }}'>test- <a href="{% url 'hospital-list' %}">mamadera</a>{{ instance.dead_daily }}</p> -->
 {% endfor %}
 
 {% endblock %}
