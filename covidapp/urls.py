@@ -8,6 +8,7 @@ app_name = 'covidapp'
 
 urlpatterns = [
 	path('createCovid', hospital_create_view),
+	#path('chart', hospital_chart_view)
 	#path('covidapp/', hospital_list_view),
 	#path('<int:id>/', hospital_detail_view),
 	path('product', product_detail_view, name='product-detail'),

@@ -8,6 +8,7 @@ from .forms import HospitalForm
 
 # Create your views here.
 from .models import Hospital
+#from chartit import DataPool, Chart
 
 def hospital_create_view(request):
 	form = HospitalForm(request.POST or None)
@@ -47,3 +48,45 @@ def hospital_list_view(request):
 		"object_list": queryset       # object_list is the key and queryset is the value
 	}
 	return render(request, "covidapp/hospital_list.html", context)
+
+# def hospital_chart_view(request):
+#     #Step 1: Create a DataPool with the data we want to retrieve.
+#     hospitaldata = \
+#         DataPool(
+#            series=
+#             [{'options': {
+#                'source': Hospital.objects.all()},
+#               'terms': [
+#                 'date_time',
+#                 'hospital_currently',
+#                 'ICU_currently', 
+#                 'hospital_increase', 
+#                 'dead_daily',  
+#                 'tested_today']}
+#              ])
+
+#     #Step 2: Create the Chart object
+#     cht = Chart(
+#             datasource = hospitaldata,
+#             series_options =
+#               [{'options':{
+#                   'type': 'column',
+#                   'stacking': False},
+#                 'terms':{
+#                   'daily': [
+#                     'date_time',
+#                     'hospital_currently',
+#                     'ICU_currently', 
+#                     'hospital_increase', 
+#                     'dead_daily',  
+#                     'tested_today']
+#                   }}],
+#             chart_options =
+#               {'title': {
+#                    'text': 'hospital data'},
+#                'xAxis': {
+#                     'title': {
+#                        'text': 'daily number'}}})
+
+#     #Step 3: Send the chart object to the template.
+#     return render(request, 'hospitalchart.html', {'chart_list': [cht]})
