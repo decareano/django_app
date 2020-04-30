@@ -29,6 +29,7 @@ urlpatterns = [
     path('products/', include('products.urls')),
     path('', home_view, name='home'),
     path('contact/', contact_view),
+    #path("", include('covidapp.urls')),
     #path('<int:id>/', product_detail_view, name='product-detail'),
     #path('product/', product_detail_view, name='product-detail'),
     path('create/', product_create_view, name='product-create'),

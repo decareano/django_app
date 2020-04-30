@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'pages',
     'blog',
     'covidapp',
+    # 'chartit',
+    # 'covidapp.apps.CovidappConfig',
 ]
 
 MIDDLEWARE = [

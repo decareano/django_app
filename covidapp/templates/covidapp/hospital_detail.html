@@ -3,15 +3,34 @@
 {% block content %}
 
 <!-- <h1>Description of the field is:</h1>{{ hospitalIncrease }} -->
-
-<h1>{% block title %}Description of the field is: {{ object.hospital_increase }}</h1>{% endblock %}
+<h1>{% block header %}Covid-19 data for NY State: </h1>{% endblock %}
+<h2>{% block title %}This is the data you requested: </h2>{{ object.date_time }}{% endblock %}
 <!-- <p>{% if obj.description != None and obj.description != '' %}{{ obj.hospital_increase }}{% else %}Description coming soon{% endif %}</p> -->
-<p>{% if object.hospital_currently != None and object.hospital_currently != '' %}{{ object.hospital_currently}}{% else %}Hospital_currently coming soon{% endif %}</p>
-<h1>Item</h1>
-<h3>Dead totals for the day: </h3> {{ object.dead_daily }}
-This will be escaped: {{ object.hospital_increase }}
+<!-- <p>{% if object.hospital_currently != None and object.hospital_currently != '' %}{{ object.hospital_currently }}{% else %}Hospital_currently coming soon{% endif %}</p> -->
+<!-- <h1>Item</h1> -->
+<h4>Patients in hospitals: </h4> {{ object.hospital_currently }}
+
+<h4>Patients in ICU: </h4>{{ object.ICU_currently }}
+
+<h4>Death increase today: </h4>{{ object.dead_daily }}
+<!-- This will be escaped: {{ object.hospital_increase }}
+ -->
+
 
 {% endblock %}
+
+
+
+
+
+
+<!-- 
+			'date_time',
+			'hospitalCurrently',
+			'ICUcurrently',
+			'hospitalIncrease',
+			'deadDaily',
+			'testedToday', -->
 
 
 
