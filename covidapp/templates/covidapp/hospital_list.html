@@ -1,12 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      
+    </div>
+  </div>
+</div>
 
-
-
+<h3> Pick on a date to view the data </h3>
 {% for instance in object_list %}
-	<p>{{ instance.id }} - <a href='{{ instance.get_absolute_url }}'>{{ instance.dead_daily }}</p>
-	<!-- <p>{{ instance.tested_today }} - <a href='{{ instance.get_absolute_url }}'>test- <a href="{% url 'hospital-list' %}">mamadera</a>{{ instance.dead_daily }}</p> -->
+<p><a class="btn btn-primary" href='/covidapp/{{ instance.id }}'>{{ instance.date_time }}</p>
 {% endfor %}
-
 {% endblock %}
+
+
+
+

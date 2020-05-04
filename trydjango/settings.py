@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'pages',
     'blog',
     'covidapp',
+    'bootstrap4',
     # 'chartit',
     # 'covidapp.apps.CovidappConfig',
 ]

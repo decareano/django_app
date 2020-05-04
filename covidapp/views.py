@@ -24,6 +24,7 @@ def hospital_create_view(request):
 	}
 	return render(request, "covidapp/hospital_create.html", context) 
 
+
 def hospital_detail_view(request, id):
 	obj = Hospital.objects.get(id=id)
 	
@@ -44,10 +45,42 @@ def hospital_detail_view(request, id):
 
 def hospital_list_view(request):
 	queryset = Hospital.objects.all() #list of objects 
+	num_hospital = Hospital.objects.all().count()
 	context = {
-		"object_list": queryset       # object_list is the key and queryset is the value
+		"object_list": queryset, 
+		"num_hospital": num_hospital,  
+		#'hospitalCurrently': queryset,
+    	# 'num_instances': num_instances,
+    	# 'num_instances_available': num_instances_available,
+    	# 'num_authors': num_authors,   # object_list is the key and queryset is the value
 	}
 	return render(request, "covidapp/hospital_list.html", context)
+
+def hospital_index_view(request):
+	
+	num_hospital = Hospital.objects.all().count()
+	context = {
+		
+		"num_hospital": num_hospital,  
+		#'hospitalCurrently': queryset,
+    	# 'num_instances': num_instances,
+    	# 'num_instances_available': num_instances_available,
+    	# 'num_authors': num_authors,   # object_list is the key and queryset is the value
+	}
+	return render(request, "covidapp/hospital_index.html", context)
+
+
+# def dynamic_lookup_view(request, id):
+# 	#obj = Product.objects.get(id=id)
+# 	#obj = get_object_or_404(Product, id=id)
+# 	try:
+# 		obj = Product.objects.get(id=id)
+# 	except Product.DoesNotExist:
+# 		raise Http404
+# 	context = {
+# 		"object": obj
+# 	}
+# 	return render(request, "products/product_detail.html", context)
 
 # def hospital_chart_view(request):
 #     #Step 1: Create a DataPool with the data we want to retrieve.
