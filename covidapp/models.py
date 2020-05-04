@@ -13,5 +13,6 @@ class Hospital(models.Model):
     tested_today		=		models.TextField(blank=True)
 
     def get_absolute_url(self):
-    	return reverse("product-detail", kwargs={"id": self.id}) #f"/products/{self.id}/"
+    	return reverse("hospital-list", kwargs={"id": self.id}) #f"/products/{self.id}/"
+    	return reverse("hospital-detail", kwargs={"id": self.id}) #f"/products/{self.id}/"
     	#return f"/covidapp/{self.id}/"

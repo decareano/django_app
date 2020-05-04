@@ -15,19 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include,path
+from covidapp import views
+#from django.views.generic import RedirectView
 from pages.views import home_view, contact_view, about_view, my_page_view
 from products.views import product_detail_view, product_create_view, render_initial_data, dynamic_lookup_view, product_delete_view, product_list_view
-from covidapp.views import hospital_create_view, hospital_detail_view, hospital_list_view
+from covidapp.views import hospital_create_view, hospital_detail_view, hospital_list_view, hospital_index_view
 
 urlpatterns = [
     path('createCovid', hospital_create_view),
-    #path('covidapp/', include('covidapp.urls')),
+    #path('covidapp/', hospital_list_view, name='hospital-list'),
+    #path('', RedirectView.as_view(url='covidapp/', permanent=True)),
+    path('covidapp/', include('covidapp.urls')),
     #path('oneCovid/', hospital_detail_view, name='product-delete'),
-    path('oneCovid/<int:id>/', hospital_detail_view, name='product-detail'),
-    path('covidapp/', hospital_list_view, name='hospital-list'),
+    #path('oneCovid/<int:id>/', hospital_detail_view, name='product-detail'),
     path('blog/', include('blog.urls')),
     path('products/', include('products.urls')),
-    path('', home_view, name='home'),
+    #path('', home_view, name='home'),
     path('contact/', contact_view),
     #path("", include('covidapp.urls')),
     #path('<int:id>/', product_detail_view, name='product-detail'),
