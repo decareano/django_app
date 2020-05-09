@@ -45,6 +45,7 @@ def hospital_detail_view(request, id):
 
 def hospital_list_view(request):
 	queryset = Hospital.objects.all() #list of objects 
+	print(queryset)
 	num_hospital = Hospital.objects.all().count()
 	context = {
 		"object_list": queryset, 
