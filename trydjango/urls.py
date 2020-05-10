@@ -43,4 +43,4 @@ urlpatterns = [
     #path('products/<int:id>/', dynamic_lookup_view, name='product-detail'),
     path('products/<int:id>/delete/', product_delete_view, name='product-delete'),
     path('pageview/', my_page_view, name='page-view')
-]
+] 
