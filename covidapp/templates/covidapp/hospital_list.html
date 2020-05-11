@@ -10,9 +10,9 @@
       {% for instance in object_list %}
       <p><a class="btn btn-light" href='/covidapp/{{ instance.id }}'>{{ instance.date_time }}</a></p>
       {% endfor %}
+      <a href="/covidapp/hospitals/" class="btn btn-success btn-sm"><i aria-hidden="true" class="fa fa-line-chart"></i>See graph</a>
       {% endblock %}
-      <a href="/covidapp/statistics/usa" class="btn btn-success btn-sm"><i aria-hidden="true" class="fa fa-line-chart"></i> See graph
-                  </a>
+      
 </div>
 
 
