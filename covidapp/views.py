@@ -10,6 +10,8 @@ from .forms import HospitalForm
 from .models import Hospital
 #from chartit import DataPool, Chart
 
+
+#Good one below
 def hospital_create_view(request):
 	form = HospitalForm(request.POST or None)
 	if form.is_valid():
@@ -23,6 +25,28 @@ def hospital_create_view(request):
 		'form': form
 	}
 	return render(request, "covidapp/hospital_create.html", context) 
+
+#WIP below with justin tutorial
+# def hospital_create_view(request):
+
+# 	my_form = HospitalForm()
+# 	if request.method == 'POST':
+# 		my_form = HospitalForm(request.POST or None)
+# 		if my_form.is_valid():
+# 			print(my_form.cleaned_data)
+# 			Hospital.objects.create(**my_form.cleaned_data)
+# 		else:
+# 			print(my_form.errors)
+	
+# 	context = {
+# 		"form": my_form
+# 	}
+# 	# context = {
+# 	# 	'title': obj.title,
+# 	# 	'description': obj.description
+# 	# }
+	
+# 	return render(request, "covidapp/hospital_create.html", context) 
 
 
 def hospital_detail_view(request, id):
