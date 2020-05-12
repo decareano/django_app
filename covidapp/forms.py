@@ -3,9 +3,9 @@ import datetime
 from .models import Hospital
 
 
-class HospitalForm(forms.ModelForm):
+class HospitalForm(forms.Form):
 	date_time   			= forms.DateField(initial=datetime.date.today)
-	hospitalCurrently 		= forms.CharField()
+	hospitalCurrently 		= forms.IntegerField()
 						# 			required=False, 
 						# 			widget=forms.Textarea(
 						# 		  	attrs={
@@ -18,17 +18,17 @@ class HospitalForm(forms.ModelForm):
 						# 		  	}
 						# 	)
 						# )
-	ICUcurrently   			= forms.CharField()
-	hospitalIncrease       	= forms.CharField()
-	deadDaily				= forms.CharField()
-	testedToday				= forms.CharField()
+	icucurrently   			= forms.IntegerField()
+	hospitalIncrease       	= forms.IntegerField()
+	deadDaily				= forms.IntegerField()
+	testedToday				= forms.IntegerField()
 
 	class Meta:
 		model = Hospital
 		fields = [
 			'date_time',
 			'hospitalCurrently',
-			'ICUcurrently',
+			'icucurrently',
 			'hospitalIncrease',
 			'deadDaily',
 			'testedToday',
