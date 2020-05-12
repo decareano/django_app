@@ -6,11 +6,11 @@ import datetime
 
 class Hospital(models.Model):
     date_time 			=    	models.DateField()
-    hospital_currently 	= 		models.IntegerField()
-    ICU_currently		= 		models.IntegerField()
-    hospital_increase 	= 		models.IntegerField()
-    dead_daily			= 		models.IntegerField()
-    tested_today		=		models.IntegerField()
+    hospital_currently 	= 		models.IntegerField(null=True)
+    icucurrently		= 		models.IntegerField(null=True)
+    hospital_increase 	= 		models.IntegerField(null=True)
+    dead_daily			= 		models.IntegerField(null=True)
+    tested_today		=		models.IntegerField(null=True)
 
     def get_absolute_url(self):
     	return reverse("hospital-list", kwargs={"id": self.id}) #f"/products/{self.id}/"
